@@ -1,0 +1,67 @@
+<body><div id="toolbar"> 
+    <mat-toolbar color="secondary">
+      <div fxShow="true" fxHide.gt-sm="true">
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+  
+      <a mat-button class="webName" routerLink="/">
+        <span>GameRanker</span>
+      </a>
+      <span class="example-spacer"></span>
+  
+    </mat-toolbar>
+    <mat-sidenav-container fxFlexFill class="example-container">
+  
+      <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over"  opened="false" fxHide.gt-sm="true">
+        <div fxLayout="column">
+          <a mat-button routerLink="/list">Game List</a>
+          <a mat-button routerLink="/csgo">CS:GO</a>
+          <a mat-button routerLink="/minecraft">Minecraft</a>
+          <a mat-button routerLink="/control">Control</a>
+          <a mat-button routerLink="/zelda">Ocarina of Time</a>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill>
+        <div id="invis">
+        Menu
+    </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+        <mat-card-title><h1>{{minecraft.title}}<img mat-card-image src="/assets/img/minecraftcardpic.png"></h1></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+        <mat-card-subtitle>{{minecraft.subtitle}}</mat-card-subtitle>
+        {{minecraft.content}}
+        </mat-card-content>
+        </mat-card>    
+<div [hidden]="submitted">
+    <h2>What's Your Rank?</h2>
+    <form (ngSubmit)="onSubmit()" #minecraftForm="ngForm">
+<div class="form-group">
+    <label for="score">Score</label>
+    <select class="form-control" id="score" required 
+    [(ngModel)]="model.score" name = "score">
+      <option *ngFor="let number of score" [value]="number">{{number}}</option>
+    </select>
+</div>
+<button type="submit" class="btn btn-success" [disabled]="!minecraftForm.form.valid">Rank</button>
+</form>
+</div>
+<div [hidden]="!submitted">
+    <h2>You gave Minecraft:</h2>
+    <div class="row">
+      <div class="col-xs-3">Score</div>
+      <div class="col-xs-9">{{ model.score }}</div>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+
+  </div>
+</body>

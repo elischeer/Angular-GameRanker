@@ -1,0 +1,57 @@
+mat-toolbar{
+    background-color: rgba(255,255,255,0.5);
+}
+
+mat-sidenav-container{
+    position: relative;
+    background-color: rgba(255,255,255,0.5);
+    height: 42px;
+}
+
+#invis{
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+body{
+    background-image: url("/assets/img/zeldabackground.jpg");
+    background-size: cover;
+}
+
+mat-card-image{
+    max-width: 50%;
+    max-height: 50%;
+}
+
+img{
+    height: 250px;
+    width: 200px;
+}
+
+mat-card {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgba(255, 255, 255, 0.616);
+}
+
+mat-card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    color: white;
+}
+
+h2{
+    color:white;
+}
+
+.col-xs-3{
+    color: white;
+}
+
+.col-xs-9{
+    color: white;
+}
